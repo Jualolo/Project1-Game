@@ -1,0 +1,30 @@
+Whack a mole! (based) Game:
+
+✅Milestone 1: Set up workspace
+    - Initial html and css✅
+
+✅Milestone 2: Create object class, change color onclick
+
+    -Object class ✅
+    -Change color onclick (blue to red and back)✅
+    -Change color inside with methods inside the classes ✅
+
+    -Set object always same size ✅
+
+✅Milestone 3: Set timer(1min), + Game over page ✅
+
+Milestone 4: Object disappears (no-click=2s)(on-click=2s+1s)
+
+Milestone 5: Set interval, object creation every 2-3 seconds
+
+Milestone 6: Random positions objects ✅
+--------------------
+Milestone 7: CSS decoration
+
+
+Problems to solve:
+    -button must work on every object (check in M5)
+    calling buttonClicked() on both objects returns twice the consl.log but after clicking the correct one once
+
+Notes:
+    -querySelector selects the whole class but will only act in the clicked object
