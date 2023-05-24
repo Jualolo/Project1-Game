@@ -83,19 +83,19 @@ const object = new Object();
 // ------------------------------- //
 
 // Interval for objects creation //
-
 let intervalCount = 1;
 setInterval(function(){
     // object.createDomElm();
-    // const object+intervalCount = new Object();
+    const object = new Object();
     // objArray.push(object);
     // console.log(objArray);
     console.log(intervalCount);
-    intervalCount++
-}, 1000)
+    intervalCount++;
+}, 3500)
+// ------------------------------- //
 
 
-// buttonClicked() function calling // --------------------//
+// buttonClicked function calling // --------------------//
 buttonClicked()
 // object.buttonClicked();
 // object2.buttonClicked();
