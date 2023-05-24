@@ -11,13 +11,18 @@ Whack a mole! (based) Game:
 
     -Set object always same size ✅
 
-✅Milestone 3: Set timer(1min), + Game over page ✅
+✅Milestone 3: Set timer(1min), + Game over page
 
-Milestone 4: Object disappears (no-click=2s)(on-click=2s+1s)
+✅Milestone 4: Object disappears (no-click=2s)(on-click=2s+1s)
+
+    -Remove child function✅
+    -Set timesOut for the child removal✅
+        -object disappears after being clicked (changeColor + 1s)✅
+        -object disappears after 2 seconds of existing✅
 
 Milestone 5: Set interval, object creation every 2-3 seconds
 
-Milestone 6: Random positions objects ✅
+✅Milestone 6: Random positions objects 
 --------------------
 Milestone 7: CSS decoration
 
@@ -25,6 +30,8 @@ Milestone 7: CSS decoration
 Problems to solve:
     -button must work on every object (check in M5)
     calling buttonClicked() on both objects returns twice the consl.log but after clicking the correct one once
+
+    -Cannot set the timer to +1s for the onclick removal of the object✅
 
 Notes:
     -querySelector selects the whole class but will only act in the clicked object
