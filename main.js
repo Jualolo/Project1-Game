@@ -1,5 +1,5 @@
 class Object {
-    constructor(){
+    constructor() {
         this.width = 100;
         this.height = 100;
         this.positionX = Math.random(Math.floor()) * 80;
@@ -13,7 +13,7 @@ class Object {
 
         this.score = 0;
     }
-    createDomElm(){
+    createDomElm() {
         // step1: create the element
         this.domElement = document.createElement("button")
 
@@ -26,7 +26,7 @@ class Object {
         this.domElement.style.left = this.positionX + "vw";
         this.domElement.style.bottom = this.positionY + "vh";
         // console.log(this.domElement);
-        
+
         //step3: append to the dom: `parentElm.appendChild()`
         const parentElm = document.getElementById("board");
         parentElm.appendChild(this.domElement);
@@ -37,13 +37,13 @@ class Object {
 
 
 //TimeOut disappearence of the objects //
-setTimeout(function(){
+setTimeout(function () {
     removeElm();
 }, 3000)
 // ----------------------------------- //
 
 // BUTTON CLICKING SECTION (multiple functions // ------------------- //)
-function buttonClicked(){
+function buttonClicked() {
     let button = document.querySelector('.object-blue')
     button.addEventListener("click", () => {
         console.log('buttonClick function works');
@@ -53,21 +53,21 @@ function buttonClicked(){
         // setTimeout(this.removeElm().bind(this), 1000)
     })
 }
-function changeColor(){
-    
+function changeColor() {
+
     let button = document.querySelector('.object-blue')
     button.style.backgroundColor = "#ef1414";
-    
+
     console.log('change color function works');
 }
-function removeElm(){
+function removeElm() {
     const parentElm = document.getElementById("board");
     const childElm = document.querySelector(".object-blue")
     // const childElm = document.getElementsByClassName("object-blue")
     parentElm.removeChild(childElm);
 }
-function removeTimer(){
-    setTimeout(function(){
+function removeTimer() {
+    setTimeout(function () {
         console.log('timeout for onclick remover works');
         removeElm();
     }, 1000)
@@ -76,27 +76,39 @@ function removeTimer(){
 
 // Object class instances creations // --------------------//
 let objArray = [];
-const object = new Object();
+// const object = new Object();
 // const object2 = new Object();
 // objArray.push(object, object2);
 // console.log(objArray);
 // ------------------------------- //
 
 // Interval for objects creation //
+
 let intervalCount = 1;
-setInterval(function(){
-    // object.createDomElm();
-    const object = new Object();
-    // objArray.push(object);
-    // console.log(objArray);
-    console.log(intervalCount);
+
+setInterval(function () {
+    const newObject = new Object();
+    objArray.push(newObject);
+    console.log(objArray);
+    buttonClicked();
     intervalCount++;
-}, 3500)
+    setTimeout(function () {
+        removeElm();
+    }, 2000)
+}, 2700);
+
+objArray.forEach(function () {
+    // buttonClicked();
+    setTimeout(function () {
+        removeElm();
+    }, 3000)
+    console.log('1');
+})
 // ------------------------------- //
 
 
 // buttonClicked function calling // --------------------//
-buttonClicked()
+// buttonClicked()
 // object.buttonClicked();
 // object2.buttonClicked();
 // objArray.forEach(function(objInstance){
@@ -108,7 +120,7 @@ buttonClicked()
 
 
 // GAME OVER // ------------- //
-setTimeout(function(){
+setTimeout(function () {
     location.href = './game-over.html';
 }, 60_000)
 // -------------------------- //
