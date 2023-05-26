@@ -8,11 +8,22 @@
 </head>
 <body>
     <h1>GAME OVER</h1>
+    <h4>Your score was: <span id="finalScore"></span></h4>
     <a href="./index.html">Play Again</a>
     <style>
         body {
             background-color: #3fd1d9;
+            text-align: center;
         }
     </style>
+    <script>
+        window.onload = function(){
+            const finalScore = localStorage.getItem('final-score')
+            console.log(finalScore);
+            let finalScoreHtml = document.getElementById("finalScore");
+            finalScoreHtml.innerText = `${finalScore}`
+
+        }
+    </script>
 </body>
 </html>

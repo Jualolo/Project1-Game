@@ -36,12 +36,12 @@ class Object {
 
 // TIMER & SCORE //
 let timer;
-let score;
+// let score;
 let timerHtml = document.getElementById("timer");
 let scoreHtml = document.getElementById("score");
 
 function timerFunction() {
-    let sec = 60;
+    let sec = 59;
     timer = setInterval(() => {
         timerHtml.innerText = '00:'+sec;
         sec--;
@@ -54,6 +54,7 @@ function addScore() {
     points++;
     scoreHtml.innerText = `${points}`;
 }
+
 
 
 // ------------- //
@@ -134,6 +135,7 @@ objArray.forEach(function () {
 // GAME OVER // ------------- //
 setTimeout(function () {
     location.href = './game-over.html';
+    localStorage.setItem('final-score', points);
 }, 60_000)
 // -------------------------- //
 
