@@ -1,7 +1,7 @@
 class Object {
     constructor() {
-        this.width = 100;
-        this.height = 100;
+        this.width = 60;
+        this.height = 60;
         this.positionX = Math.random(Math.floor()) * 80;
         this.positionY = Math.random(Math.floor()) * 80;
         // this.positionX = 70;
@@ -19,7 +19,7 @@ class Object {
 
         // step2: add content or modify (ex. innerHTML...)
         // this.domELement.id = "object";
-        this.domElement.innerHTML = "<button id='button'>zzz</div>"
+        this.domElement.innerHTML = "<button id='button'></div>"
         this.domElement.className = "object-blue";
         this.domElement.style.width = this.width + "px";
         this.domElement.style.height = this.height + "px";
@@ -54,9 +54,6 @@ function addScore() {
     points++;
     scoreHtml.innerText = `${points}`;
 }
-
-
-
 // ------------- //
 
 //TimeOut disappearence of the objects //
@@ -119,8 +116,8 @@ setInterval(function () {
     intervalCount++;
     setTimeout(function () {
         removeElm();
-    }, 1700)
-}, 2700);
+    }, 1500)
+}, 2000);
 
 objArray.forEach(function () {
     // buttonClicked();
