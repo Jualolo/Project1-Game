@@ -34,12 +34,34 @@ class Object {
 
 }
 
+// TIMER & SCORE //
+let timer;
+let score;
+let timerHtml = document.getElementById("timer");
+let scoreHtml = document.getElementById("score");
 
+function timerFunction() {
+    let sec = 60;
+    timer = setInterval(() => {
+        timerHtml.innerText = '00:'+sec;
+        sec--;
+    }, 1000)
+}
+timerFunction();
+
+let points = 0;
+function addScore() {
+    points++;
+    scoreHtml.innerText = `${points}`;
+}
+
+
+// ------------- //
 
 //TimeOut disappearence of the objects //
-setTimeout(function () {
-    removeElm();
-}, 3000)
+// setTimeout(function () {
+//     removeElm();
+// }, 3000)
 // ----------------------------------- //
 
 // BUTTON CLICKING SECTION (multiple functions // ------------------- //)
@@ -49,6 +71,8 @@ function buttonClicked() {
         console.log('buttonClick function works');
         changeColor();
         removeTimer();
+
+        addScore();
         // this.removeElm()
         // setTimeout(this.removeElm().bind(this), 1000)
     })
@@ -89,12 +113,12 @@ let intervalCount = 1;
 setInterval(function () {
     const newObject = new Object();
     objArray.push(newObject);
-    console.log(objArray);
+    // console.log(objArray);
     buttonClicked();
     intervalCount++;
     setTimeout(function () {
         removeElm();
-    }, 2000)
+    }, 1700)
 }, 2700);
 
 objArray.forEach(function () {
@@ -107,20 +131,9 @@ objArray.forEach(function () {
 // ------------------------------- //
 
 
-// buttonClicked function calling // --------------------//
-// buttonClicked()
-// object.buttonClicked();
-// object2.buttonClicked();
-// objArray.forEach(function(objInstance){
-//     objInstance.buttonClicked();
-// }) no funciona porque al pulsar uno se activan los dos
-//  ------------------------------//
-
-
-
-
 // GAME OVER // ------------- //
 setTimeout(function () {
     location.href = './game-over.html';
 }, 60_000)
 // -------------------------- //
+
